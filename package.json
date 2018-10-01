@@ -1,0 +1,48 @@
+{
+  "name": "trella",
+  "version": "1.0.0",
+  "description": "An open-source Discord bot for easy Trello management.",
+  "main": "main.js",
+  "dependencies": {
+    "cach": "^1.0.5",
+    "chalk": "^2.4.1",
+    "lowdb": "^1.0.0",
+    "pg": "^7.4.3",
+    "prompts": "^1.1.1",
+    "sequelize": "^4.39.0",
+    "trello": "^0.9.0",
+    "yamdbf": "^3.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nodemon": "^1.18.4",
+    "xo": "^0.23.0"
+  },
+  "scripts": {
+    "start": "cach node main.js",
+    "test": "xo && ava",
+    "watch": "nodemon",
+    "setup": "node setup.js",
+    "lint": "xo",
+    "fix": "xo --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bottza/trella.git"
+  },
+  "keywords": [
+    "trella",
+    "trello",
+    "bot",
+    "discord"
+  ],
+  "author": "Bottza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bottza/trella/issues"
+  },
+  "homepage": "https://github.com/bottza/trella#readme",
+  "xo": {
+    "space": 2
+  }
+}

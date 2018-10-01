@@ -1,0 +1,3 @@
+{
+  "ignore": ["storage", "setup.js", ".git", ".gitignore", "README.md", "LICENSE.md"]
+}
