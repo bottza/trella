@@ -28,12 +28,12 @@ module.exports = class extends Command {
     });
   }
 
-  async run(message, {id}) {
+  run(message, {id}) { // eslint-disable-line no-unused-vars
     const prefix = message.guild === null ? this.client.commandPrefix : message.guild.commandPrefix;
     if (!db.get('users').find({id: message.author.id}).value()) {
       return message.reply('You\'re not signed in! Please run `' + prefix + 'auth`.');
     }
     const {token} = db.get('users').find({id: message.author.id}).value();
-    const trello = trelloYello({key, token});
+    const trello = trelloYello({key, token}); // eslint-disable-line no-unused-vars
   }
 };

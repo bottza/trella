@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "cach node main.js",
-    "test": "xo",
+    "test": "xo && ava",
     "watch": "nodemon",
     "setup": "node setup.js",
     "lint": "xo",
