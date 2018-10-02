@@ -1,23 +1,38 @@
-const {Client} = require('yamdbf');
+const path = require('path');
+const chalk = require('chalk');
+const {CommandoClient} = require('discord.js-commando');
 
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+
+const adapter = new FileSync('storage/bot.json');
+const db = low(adapter);
+
 const config = require('./config');
 
-const authorizedUsers = new FileSync('storage/authorized_users.json');
-const authorizedUsersDb = low(authorizedUsers);
-
-const client = new Client({
-  name: 'Trella',
-  commandsDir: './commands',
-  readyText: 'Client is ready!',
-  token: config.token,
+const client = new CommandoClient({
+  commandPrefix: '?',
   owner: config.owner,
-  pause: true
-}).start();
-
-client.on('pause', async () => {
-  await client.setDefaultSetting('prefix', '?');
-  authorizedUsersDb.defaults({ users: [] }).write();
-  client.emit('continue');
+  disableEveryone: false
 });
+
+client.registry
+  .registerDefaultTypes()
+  .registerGroups([
+    ['boards', 'Boards'],
+    ['lists', 'Lists'],
+    ['cards', 'Cards'],
+    ['other', 'Other'],
+    ['utility', 'Utility']
+  ])
+  .registerDefaultGroups()
+  .registerDefaultCommands()
+  .registerCommandsIn(path.join(__dirname, 'commands'));
+
+client.on('ready', () => {
+  console.log(chalk.green('The bot is ready!'));
+  client.user.setActivity('for ' + client.commandPrefix + 'help', {type: 'WATCHING'});
+});
+
+db.defaults({users: [], selectedBoards: []}).write();
+client.login(config.token);
