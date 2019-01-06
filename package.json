@@ -5,7 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "cach": "^1.0.5",
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "lowdb": "^1.0.0",
