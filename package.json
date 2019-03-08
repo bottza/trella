@@ -9,7 +9,7 @@
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "lowdb": "^1.0.0",
-    "pg": "^7.4.3",
+    "pg": "^7.8.2",
     "prompts": "^1.2.1",
     "sequelize": "^4.39.0",
     "trello-yello": "^1.0.9"
