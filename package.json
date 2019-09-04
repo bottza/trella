@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.19.2",
     "xo": "^0.23.0"
   },
   "scripts": {
