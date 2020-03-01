@@ -6,7 +6,7 @@
   "dependencies": {
     "cach": "^1.0.5",
     "chalk": "^2.4.1",
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.6.1",
     "discord.js-commando": "^0.10.0",
     "lowdb": "^1.0.0",
     "pg": "^7.4.3",
